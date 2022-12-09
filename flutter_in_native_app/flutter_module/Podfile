@@ -1,0 +1,47 @@
+platform :ios, '9.0'
+
+# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+INFO_PLIST_PATH = File.expand_path("../../ios_native_app/GoogleService-Info.plist", Dir.pwd)
+
+def run_script_brand
+  script_phase :name => 'Run Flutter Firebase',
+      :script => "INFO_PLIST=GoogleService-Info.plist\nINFO_FILE=\"#{INFO_PLIST_PATH}\"\n\necho \"Looking for ${INFO_PLIST} in ${INFO_FILE}\"\nif [ ! -f $INFO_FILE ]\nthen\n\techo \"Não foi encontrado o arquivo ${INFO_FILE}.\"\n\texit 1\nfi\n\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Will copy ${INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\necho \"Using ${INFO_FILE}\"\ncp \"${INFO_FILE}\" \"${PLIST_DESTINATION}\""
+end
+
+def flutter_root
+  generated_xcode_build_settings_path = File.expand_path(File.join('..', 'Flutter', 'Generated.xcconfig'), __FILE__)
+  unless File.exist?(generated_xcode_build_settings_path)
+    raise "#{generated_xcode_build_settings_path} must exist. If you're running pod install manually, make sure \"flutter pub get\" is executed first"
+  end
+
+  File.foreach(generated_xcode_build_settings_path) do |line|
+    matches = line.match(/FLUTTER_ROOT\=(.*)/)
+    return matches[1].strip if matches
+  end
+  raise "FLUTTER_ROOT not found in #{generated_xcode_build_settings_path}. Try deleting Generated.xcconfig, then run flutter pub get"
+end
+
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
+
+flutter_ios_podfile_setup
+
+target 'Runner' do
+  use_frameworks!
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+  run_script_brand
+  pod 'FlutterPluginRegistrant', :path => File.join('Flutter', 'FlutterPluginRegistrant'), :inhibit_warnings => true
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+  end
+end
