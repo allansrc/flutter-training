@@ -129,3 +129,6 @@ Set of repositories, links and tutorial to be used in training services, from ba
 - [Layout practice examples - Figma](https://www.figma.com/file/vBhq4gxgwBt7wHhHmgeCbb/Behance?node-id=247%3A2)
 - [How to avoid side effects in build() method](https://codewithandrea.com/articles/side-effects-flutter/)
 - [Accessibility in Flutter](https://docs.flutter.dev/development/accessibility-and-localization/accessibility)
+- [Internals for Flutter (old)](https://www.didierboelens.com/2019/09/flutter-internals/)
+- [Internals for Flutter GITBOOK](https://flutter.megathink.com/core/framework/)
+- [Internals for Flutter DOC](https://docs.flutter.dev/resources/architectural-overview)
