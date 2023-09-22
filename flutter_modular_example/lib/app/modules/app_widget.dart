@@ -20,22 +20,22 @@ class AppWidget extends StatelessWidget {
         LocalJsonLocalization.delegate,
       ],
       supportedLocales: const [
-        Locale('en'),
+        Locale('en', 'US'),
         Locale('pt', 'BR'),
         Locale('pt', 'PT'),
       ],
 
       // OPTIONAL
-      // localeResolutionCallback: (locale, supportedLocales) {
-      //   if (supportedLocales.contains(locale)) {
-      //     return locale;
-      //   }
-      //   if (locale?.countryCode?.toLowerCase() == 'pt') {
-      //     return const Locale('pt', 'PT');
-      //   }
+      localeResolutionCallback: (locale, supportedLocales) {
+        if (supportedLocales.contains(locale)) {
+          return locale;
+        }
+        if (locale?.countryCode?.toLowerCase() == 'pt') {
+          return const Locale('pt', 'PT');
+        }
 
-      //   return const Locale('en', 'US');
-      // },
+        return const Locale('en', 'US');
+      },
     );
   }
 }
