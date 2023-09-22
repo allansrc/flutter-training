@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_modular_example/app/components/custom_button.dart';
+import 'package:localization/localization.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,6 +18,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Page'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Text('hiThere'.i18n()),
+        onPressed: () {
+          log('hiThere'.i18n());
+        },
       ),
       body: Center(
         child: Column(
