@@ -28,8 +28,8 @@ class ProfileDatasource implements IProfileDatasource {
       } else {
         throw DatasourceExpcetion(message: response.data['message'] ?? '');
       }
-    } on DioError catch (error, stackTrace) {
-      if (error.type == DioErrorType.connectTimeout) {
+    } on DioExceptionType catch (error, stackTrace) {
+      if (error == DioExceptionType.sendTimeout) {
         throw NoInternetExpcetion(
           message: 'No Internet connection. Try Again',
           stackTrace: stackTrace,

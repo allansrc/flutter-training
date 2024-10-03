@@ -9,43 +9,24 @@ import 'package:github_search_clean_architechture/app/modules/search/presentatio
 
 class SearchModule extends Module {
   @override
-  List<Bind> get binds => [
-        //datasource
-        Bind.lazySingleton<IProfileDatasource>(
-          (i) => ProfileDatasource(
-            dio: i.get(),
-          ),
-        ),
-
-        //repository
-        Bind.lazySingleton<IProfileRepository>(
-          (i) => ProfileRepository(
-            profileDatasource: i.get(),
-          ),
-        ),
-
-        //usecase
-        Bind.factory<IGetProfilesUsecase>(
-          (i) => GetProfilesUsecase(
-            profileRepository: i.get(),
-          ),
-        ),
-
-        //cubit
-        Bind.factory(
-          (i) => ProfileCubit(
-            getProfilesUsecase: i.get(),
-          ),
-        ),
-      ];
+  void binds(i) {
+    //datasource
+    i.addLazySingleton<IProfileDatasource>(ProfileDatasource.new);
+    //repository
+    i.addLazySingleton<IProfileRepository>(ProfileRepository.new);
+    //usecase
+    i.add<IGetProfilesUsecase>(GetProfilesUsecase.new);
+    //cubit
+    i.add(ProfileCubit.new);
+  }
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute(
-          '/',
-          child: (context, args) => ProfilesPage(
-            profileCubit: Modular.get<ProfileCubit>(),
-          ),
-        ),
-      ];
+  void routes(r) {
+    r.child(
+      '/',
+      child: (context) => ProfilesPage(
+        profileCubit: Modular.get<ProfileCubit>(),
+      ),
+    );
+  }
 }

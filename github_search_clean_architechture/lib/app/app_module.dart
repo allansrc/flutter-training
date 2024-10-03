@@ -4,12 +4,12 @@ import 'package:github_search_clean_architechture/app/modules/search/search_modu
 
 class AppModule extends Module {
   @override
-  List<Bind> get binds => [
-        Bind.lazySingleton(
-          (i) => Dio(),
-        ),
-      ];
+  void binds(i) {
+    i.add(() => Dio());
+  }
 
   @override
-  List<ModularRoute> get routes => [ModuleRoute('/', module: SearchModule())];
+  void routes(r) {
+    r.module('/', module: SearchModule());
+  }
 }

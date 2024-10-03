@@ -73,8 +73,8 @@ void main() {
       const searchText = '12345670';
       when(() => dioMock.get('https://api.github.com/search/users',
           queryParameters: {'q': searchText})).thenThrow(
-        DioError(
-          type: DioErrorType.connectTimeout,
+        DioException(
+          type: DioExceptionType.sendTimeout,
           requestOptions: RequestOptions(
             path: 'https://api.github.com/search/users',
           ),
