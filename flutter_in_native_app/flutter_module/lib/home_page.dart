@@ -1,9 +1,11 @@
+import 'dart:developer';
+
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class FirstPage extends StatefulWidget {
-  const FirstPage({Key? key}) : super(key: key);
+  const FirstPage({super.key});
 
   @override
   State<FirstPage> createState() => _FirstPageState();
@@ -24,6 +26,7 @@ class _FirstPageState extends State<FirstPage> {
   void forceCrashlyticsError() async {
     try {
       final value = int.parse('not a string');
+      log('it will not get here $value');
     } catch (error, stackTrace) {
       FirebaseCrashlytics.instance.recordError(error, stackTrace);
     }
