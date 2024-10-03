@@ -7,19 +7,13 @@ import 'counter/counter_module.dart';
 
 class AppModule extends Module {
   @override
-  List<Bind> get binds => [];
+  void binds(i) {}
 
   @override
-  List<ModularRoute> get routes => [
-        ModuleRoute(
-          '/',
-          module: HomeModule(),
-        ),
-        ModuleRoute(
-          '/counter/',
-          module: CounterModule(),
-        ),
-        ModuleRoute('/nested/', module: NestedModule()),
-        WildcardRoute(child: (context, args) => const WildcardPage())
-      ];
+  void routes(r) {
+    r.module('/', module: HomeModule());
+    r.module('/counter/', module: CounterModule());
+    r.module('/nested/', module: NestedModule());
+    r.child('/', child: (context) => WildcardPage());
+  }
 }

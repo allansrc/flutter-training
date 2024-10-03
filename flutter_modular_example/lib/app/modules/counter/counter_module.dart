@@ -4,19 +4,17 @@ import 'package:flutter_modular_example/app/modules/counter/value_notifiers/coun
 
 class CounterModule extends Module {
   @override
-  List<Bind> get binds => [
-        Bind.factory(
-          (i) => CounterNotifier(),
-        ),
-      ];
+  void binds(i) {
+    i.add(CounterNotifier.new);
+  }
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute(
-          '/',
-          child: (context, args) => CounterPage(
-            counterNotifier: Modular.get<CounterNotifier>(),
-          ),
-        ),
-      ];
+  void routes(r) {
+    r.child(
+      '/',
+      child: (context) => CounterPage(
+        counterNotifier: Modular.get<CounterNotifier>(),
+      ),
+    );
+  }
 }

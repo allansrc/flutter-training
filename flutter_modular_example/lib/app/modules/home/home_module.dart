@@ -6,29 +6,23 @@ import 'package:flutter_modular_example/app/modules/home/pages/home_second_page.
 
 class HomeModule extends Module {
   @override
-  List<Bind> get binds => [];
+  void binds(i) {}
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute(
-          '/',
-          child: (context, args) => const HomePage(),
-        ),
-        ChildRoute(
-          '/second-page',
-          child: (context, args) => const HomeSecondPage(),
-        ),
-        ChildRoute(
-          '/params-page/:text',
-          child: (context, args) => HomeParamsPage(
-            textParameter: args.params['text'],
-          ),
-        ),
-        ChildRoute(
-          '/query-params-page',
-          child: (context, args) => HomeQueryParamsPage(
-            textParameter: args.queryParams['text'] ?? '',
-          ),
-        ),
-      ];
+  void routes(r) {
+    r.child('/', child: (context) => HomePage());
+    r.child('/second-page', child: (context) => const HomeSecondPage());
+    r.child(
+      '/params-page/:text',
+      child: (context) => HomeParamsPage(
+        textParameter: Modular.args.params['text'],
+      ),
+    );
+    r.child(
+      '/query-params-page',
+      child: (context) => HomeQueryParamsPage(
+        textParameter: Modular.args.queryParams['text'] ?? '',
+      ),
+    );
+  }
 }

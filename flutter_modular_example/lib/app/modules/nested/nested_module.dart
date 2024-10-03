@@ -5,23 +5,12 @@ import 'package:flutter_modular_example/app/modules/nested/submodules/module_b/m
 
 class NestedModule extends Module {
   @override
-  List<Bind> get binds => [];
+  void binds(i) {}
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute(
-          '/',
-          child: (context, args) => const NestedPage(),
-          children: [
-            ModuleRoute(
-              '/module-a/',
-              module: ModuleA(),
-            ),
-            ModuleRoute(
-              '/module-b/',
-              module: ModuleB(),
-            ),
-          ],
-        ),
-      ];
+  void routes(r) {
+    r.child('/', child: (context) => NestedPage());
+    r.module('/module-a/', module: ModuleA());
+    r.module('/module-b/', module: ModuleB());
+  }
 }

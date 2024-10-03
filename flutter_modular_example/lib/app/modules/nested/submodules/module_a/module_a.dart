@@ -3,13 +3,10 @@ import 'package:flutter_modular_example/app/modules/nested/submodules/module_a/p
 
 class ModuleA extends Module {
   @override
-  List<Bind> get binds => [];
+  void binds(i) {}
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute(
-          '/',
-          child: (context, args) => const ModuleAPage(),
-        ),
-      ];
+  void routes(r) {
+    r.child('/', child: (context) => ModuleAPage());
+  }
 }

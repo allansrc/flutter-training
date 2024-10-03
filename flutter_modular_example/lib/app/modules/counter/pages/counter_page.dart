@@ -3,8 +3,7 @@ import 'package:flutter_modular_example/app/modules/counter/value_notifiers/coun
 
 class CounterPage extends StatefulWidget {
   final CounterNotifier counterNotifier;
-  const CounterPage({Key? key, required this.counterNotifier})
-      : super(key: key);
+  const CounterPage({super.key, required this.counterNotifier});
 
   @override
   State<CounterPage> createState() => _CounterPageState();
@@ -29,7 +28,7 @@ class _CounterPageState extends State<CounterPage> {
               builder: (_, value, ___) {
                 return Text(
                   value.toString(),
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.labelMedium,
                 );
               },
             ),
