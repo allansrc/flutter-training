@@ -18,10 +18,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: const TextTheme(
-          headline1: TextStyle(
-              fontSize: 24,
-              color: Colors.white,
-              fontFamily: 'Monument-Extended'),
+          headlineMedium: TextStyle(
+            fontSize: 24,
+            color: Colors.white,
+            fontFamily: 'Monument-Extended',
+          ),
         ),
       ),
       //If you wanna use named routes with parameters, replace [routes]
