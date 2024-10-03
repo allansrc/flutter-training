@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/beginner_todo_list/melos_beginner_todo_list.iml" filepath="$PROJECT_DIR$/beginner_todo_list/melos_beginner_todo_list.iml" />
+      <module fileurl="file://$PROJECT_DIR$/class_widgets/melos_class_widgets.iml" filepath="$PROJECT_DIR$/class_widgets/melos_class_widgets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/design_system_example/melos_design_system_example.iml" filepath="$PROJECT_DIR$/design_system_example/melos_design_system_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/di_and_state_management/melos_di_and_state_management.iml" filepath="$PROJECT_DIR$/di_and_state_management/melos_di_and_state_management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doc_as_a_code_example/melos_doc_as_a_code_example.iml" filepath="$PROJECT_DIR$/doc_as_a_code_example/melos_doc_as_a_code_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doc_as_a_code_example/doc_example/melos_doc_example.iml" filepath="$PROJECT_DIR$/doc_as_a_code_example/doc_example/melos_doc_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/design_system_example/example_app/melos_example_app.iml" filepath="$PROJECT_DIR$/design_system_example/example_app/melos_example_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter_internationalization/melos_flutter_internationalization.iml" filepath="$PROJECT_DIR$/flutter_internationalization/melos_flutter_internationalization.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter_modular_example/melos_flutter_modular_example.iml" filepath="$PROJECT_DIR$/flutter_modular_example/melos_flutter_modular_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter_in_native_app/flutter_module/melos_flutter_module.iml" filepath="$PROJECT_DIR$/flutter_in_native_app/flutter_module/melos_flutter_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter_multiple_engines/flutter_multiple_engines/melos_flutter_multiple_engines.iml" filepath="$PROJECT_DIR$/flutter_multiple_engines/flutter_multiple_engines/melos_flutter_multiple_engines.iml" />
+      <module fileurl="file://$PROJECT_DIR$/github_search_clean_architechture/melos_github_search_clean_architechture.iml" filepath="$PROJECT_DIR$/github_search_clean_architechture/melos_github_search_clean_architechture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linter_example/melos_linter_example.iml" filepath="$PROJECT_DIR$/linter_example/melos_linter_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platform_specific/melos_platform_specific.iml" filepath="$PROJECT_DIR$/platform_specific/melos_platform_specific.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tests_example/melos_tests_example.iml" filepath="$PROJECT_DIR$/tests_example/melos_tests_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/melos_flutter_training.iml" filepath="$PROJECT_DIR$/melos_flutter_training.iml" />
+    </modules>
+  </component>
+</project>
