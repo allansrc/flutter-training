@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton({
-    Key? key,
+    super.key,
     required this.isEnabled,
     required this.isBusy,
     required this.label,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   final bool isEnabled;
   final bool isBusy;
@@ -47,7 +47,7 @@ class MainButton extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           child: isBusy
               ? const CircularProgressIndicator()
-              : Text(label, style: theme.textTheme.button),
+              : Text(label, style: theme.textTheme.labelLarge),
         ),
       ),
     );
@@ -56,19 +56,12 @@ class MainButton extends StatelessWidget {
 
 class _OutlinedMainButton extends MainButton {
   const _OutlinedMainButton({
-    Key? key,
-    required bool isEnabled,
-    required bool isBusy,
-    required String label,
-    required VoidCallback onPressed,
+    required super.isEnabled,
+    required super.isBusy,
+    required super.label,
+    required super.onPressed,
     required this.icon,
-  }) : super(
-          key: key,
-          isEnabled: isEnabled,
-          isBusy: isBusy,
-          label: label,
-          onPressed: onPressed,
-        );
+  });
 
   final Widget icon;
 
@@ -76,6 +69,7 @@ class _OutlinedMainButton extends MainButton {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Material(
+      key: key,
       color: Colors.transparent,
       borderRadius: borderRadius,
       child: InkWell(
@@ -95,8 +89,8 @@ class _OutlinedMainButton extends MainButton {
               const SizedBox(width: 8),
               Text(
                 label,
-                style:
-                    theme.textTheme.button?.copyWith(color: theme.primaryColor),
+                style: theme.textTheme.labelLarge
+                    ?.copyWith(color: theme.primaryColor),
               ),
             ],
           ),

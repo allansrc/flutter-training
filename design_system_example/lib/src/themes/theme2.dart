@@ -6,7 +6,7 @@ final theme2 = ThemeData(
   primarySwatch: Colors.yellow,
   disabledColor: mediumGreyColor,
   textTheme: const TextTheme(
-    button: TextStyle(color: Colors.black26),
+    labelLarge: TextStyle(color: Colors.black26),
   ),
   progressIndicatorTheme: const ProgressIndicatorThemeData(
     color: Colors.black26,
