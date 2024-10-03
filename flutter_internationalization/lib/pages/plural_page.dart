@@ -34,7 +34,7 @@ class _PluralPageState extends State<PluralPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              context.translator.pluralExample(currentValue),
+              context.translator.pluralExample(currentValue.toInt()),
             ),
             const SizedBox(height: 16),
             Slider(

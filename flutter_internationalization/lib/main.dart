@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
               textTheme: const TextTheme(
-                bodyText2: TextStyle(fontSize: 30),
+                bodyMedium: TextStyle(fontSize: 30),
               ),
             ),
             locale: state.locale,
