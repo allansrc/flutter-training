@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: doc_example
+dependency_overrides:
+  doc_example:
+    path: doc_example
